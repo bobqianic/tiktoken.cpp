@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <unordered_map>
 #include <map>
+#include <stdexcept>
 
 #define UNICODE_INVALID 0
 #define UNICODE_LETTER 10
@@ -126,7 +127,7 @@ namespace UNICODE_RANGES {
             {0x1d507,0x1d50a},{0x1d50d,0x1d514},{0x1d516,0x1d51c},{0x1d538,0x1d539},{0x1d53b,0x1d53e},{0x1d540,0x1d544},
             {0x1d546,0x1d546},{0x1d54a,0x1d550},{0x1d56c,0x1d585},{0x1d5a0,0x1d5b9},{0x1d5d4,0x1d5ed},{0x1d608,0x1d621},
             {0x1d63c,0x1d655},{0x1d670,0x1d689},{0x1d6a8,0x1d6c0},{0x1d6e2,0x1d6fa},{0x1d71c,0x1d734},{0x1d756,0x1d76e},
-            {0x1d790,0x1d7a8},{0x1d7ca,0x1d7ca},{0x1d7ca,0x1d7ca}
+            {0x1d790,0x1d7a8},{0x1d7ca,0x1d7ca},{0x1e900,0x1e921}
     };
 
     // Letter, lowercase (12)
@@ -240,13 +241,13 @@ namespace UNICODE_RANGES {
             {0x1d586,0x1d59f},{0x1d5ba,0x1d5d3},{0x1d5ee,0x1d607},{0x1d622,0x1d63b},{0x1d656,0x1d66f},{0x1d68a,0x1d6a5},
             {0x1d6c2,0x1d6da},{0x1d6dc,0x1d6e1},{0x1d6fc,0x1d714},{0x1d716,0x1d71b},{0x1d736,0x1d74e},{0x1d750,0x1d755},
             {0x1d770,0x1d788},{0x1d78a,0x1d78f},{0x1d7aa,0x1d7c2},{0x1d7c4,0x1d7c9},{0x1d7cb,0x1d7cb},{0x1df00,0x1df09},
-            {0x1df0b,0x1df1e},{0x1df0b,0x1df1e}
+            {0x1df0b,0x1df1e},{0x1e922,0x1e943}
     };
 
     // Letter, titlecase (13)
     static const std::vector<std::pair<uint32_t, uint32_t>> Lt = {
             {0x1c5,0x1c5},{0x1c8,0x1c8},{0x1cb,0x1cb},{0x1f2,0x1f2},{0x1f88,0x1f8f},{0x1f98,0x1f9f},{0x1fa8,0x1faf},
-            {0x1fbc,0x1fbc},{0x1fcc,0x1fcc},{0x1fcc,0x1fcc}
+            {0x1fbc,0x1fbc},{0x1fcc,0x1fcc},{0x1ffc,0x1ffc}
     };
 
     // Letter, modifier (14)
@@ -262,7 +263,7 @@ namespace UNICODE_RANGES {
             {0xa9e6,0xa9e6},{0xaa70,0xaa70},{0xaadd,0xaadd},{0xaaf3,0xaaf4},{0xab5c,0xab5f},{0xab69,0xab69},
             {0xff70,0xff70},{0xff9e,0xff9f},{0x10780,0x10785},{0x10787,0x107b0},{0x107b2,0x107ba},{0x16b40,0x16b43},
             {0x16f93,0x16f9f},{0x16fe0,0x16fe1},{0x16fe3,0x16fe3},{0x1aff0,0x1aff3},{0x1aff5,0x1affb},{0x1affd,0x1affe},
-            {0x1e137,0x1e13d},{0x1e137,0x1e13d}
+            {0x1e137,0x1e13d},{0x1e94b,0x1e94b}
     };
 
     // Letter, other (15)
@@ -350,7 +351,7 @@ namespace UNICODE_RANGES {
             {0x1ee5f,0x1ee5f},{0x1ee61,0x1ee62},{0x1ee64,0x1ee64},{0x1ee67,0x1ee6a},{0x1ee6c,0x1ee72},{0x1ee74,0x1ee77},
             {0x1ee79,0x1ee7c},{0x1ee7e,0x1ee7e},{0x1ee80,0x1ee89},{0x1ee8b,0x1ee9b},{0x1eea1,0x1eea3},{0x1eea5,0x1eea9},
             {0x1eeab,0x1eebb},{0x20000,0x2a6df},{0x2a700,0x2b738},{0x2b740,0x2b81d},{0x2b820,0x2cea1},{0x2ceb0,0x2ebe0},
-            {0x2f800,0x2fa1d},{0x2f800,0x2fa1d}
+            {0x2f800,0x2fa1d},{0x30000,0x3134a}
     };
 }
 
@@ -412,7 +413,7 @@ namespace UNICODE_RANGES {
             {0x1cf30,0x1cf46},{0x1d167,0x1d169},{0x1d17b,0x1d182},{0x1d185,0x1d18b},{0x1d1aa,0x1d1ad},{0x1d242,0x1d244},
             {0x1da00,0x1da36},{0x1da3b,0x1da6c},{0x1da75,0x1da75},{0x1da84,0x1da84},{0x1da9b,0x1da9f},{0x1daa1,0x1daaf},
             {0x1e000,0x1e006},{0x1e008,0x1e018},{0x1e01b,0x1e021},{0x1e023,0x1e024},{0x1e026,0x1e02a},{0x1e130,0x1e136},
-            {0x1e2ae,0x1e2ae},{0x1e2ec,0x1e2ef},{0x1e8d0,0x1e8d6},{0x1e944,0x1e94a},{0x1e944,0x1e94a}
+            {0x1e2ae,0x1e2ae},{0x1e2ec,0x1e2ef},{0x1e8d0,0x1e8d6},{0x1e944,0x1e94a},{0xe0100,0xe01ef}
     };
 
     // Mark, spacing combining (22)
@@ -446,12 +447,12 @@ namespace UNICODE_RANGES {
             {0x11942,0x11942},{0x119d1,0x119d3},{0x119dc,0x119df},{0x119e4,0x119e4},{0x11a39,0x11a39},{0x11a57,0x11a58},
             {0x11a97,0x11a97},{0x11c2f,0x11c2f},{0x11c3e,0x11c3e},{0x11ca9,0x11ca9},{0x11cb1,0x11cb1},{0x11cb4,0x11cb4},
             {0x11d8a,0x11d8e},{0x11d93,0x11d94},{0x11d96,0x11d96},{0x11ef5,0x11ef6},{0x16f51,0x16f87},{0x16ff0,0x16ff1},
-            {0x1d165,0x1d166},{0x1d165,0x1d166}
+            {0x1d165,0x1d166},{0x1d16d,0x1d172}
     };
 
     // 	Mark, enclosing (23)
     static const std::vector<std::pair<uint32_t, uint32_t>> Me = {
-            {0x488,0x489},{0x1abe,0x1abe},{0x20dd,0x20e0},{0x20e2,0x20e4},{0x20e2,0x20e4}
+            {0x488,0x489},{0x1abe,0x1abe},{0x20dd,0x20e0},{0x20e2,0x20e4},{0xa670,0xa672}
     };
 }
 
@@ -468,13 +469,13 @@ namespace UNICODE_RANGES {
             {0x112f0,0x112f9},{0x11450,0x11459},{0x114d0,0x114d9},{0x11650,0x11659},{0x116c0,0x116c9},{0x11730,0x11739},
             {0x118e0,0x118e9},{0x11950,0x11959},{0x11c50,0x11c59},{0x11d50,0x11d59},{0x11da0,0x11da9},{0x16a60,0x16a69},
             {0x16ac0,0x16ac9},{0x16b50,0x16b59},{0x1d7ce,0x1d7ff},{0x1e140,0x1e149},{0x1e2f0,0x1e2f9},{0x1e950,0x1e959},
-            {0x1e950,0x1e959}
+            {0x1fbf0,0x1fbf9}
     };
 
     // Number, letter (32)
     static const std::vector<std::pair<uint32_t, uint32_t>> Nl = {
             {0x16ee,0x16f0},{0x2160,0x2182},{0x2185,0x2188},{0x3007,0x3007},{0x3021,0x3029},{0x3038,0x303a},{0xa6e6,0xa6ef},
-            {0x10140,0x10174},{0x10341,0x10341},{0x1034a,0x1034a},{0x103d1,0x103d5},{0x103d1,0x103d5}
+            {0x10140,0x10174},{0x10341,0x10341},{0x1034a,0x1034a},{0x103d1,0x103d5},{0x12400,0x1246e}
     };
 
     // Number, other (33)
@@ -490,21 +491,21 @@ namespace UNICODE_RANGES {
             {0x10cfa,0x10cff},{0x10e60,0x10e7e},{0x10f1d,0x10f26},{0x10f51,0x10f54},{0x10fc5,0x10fcb},{0x11052,0x11065},
             {0x111e1,0x111f4},{0x1173a,0x1173b},{0x118ea,0x118f2},{0x11c5a,0x11c6c},{0x11fc0,0x11fd4},{0x16b5b,0x16b61},
             {0x16e80,0x16e96},{0x1d2e0,0x1d2f3},{0x1d360,0x1d378},{0x1e8c7,0x1e8cf},{0x1ec71,0x1ecab},{0x1ecad,0x1ecaf},
-            {0x1ecb1,0x1ecb4},{0x1ed01,0x1ed2d},{0x1ed2f,0x1ed3d},{0x1ed2f,0x1ed3d}
+            {0x1ecb1,0x1ecb4},{0x1ed01,0x1ed2d},{0x1ed2f,0x1ed3d},{0x1f100,0x1f10c}
     };
 }
 
     namespace Punctuation {
     // 	Punctuation, connector (41)
     static const std::vector<std::pair<uint32_t, uint32_t>> Pc = {
-            {0x5f,0x5f},{0x203f,0x2040},{0x2054,0x2054},{0xfe33,0xfe34},{0xfe4d,0xfe4f},{0xfe4d,0xfe4f}
+            {0x5f,0x5f},{0x203f,0x2040},{0x2054,0x2054},{0xfe33,0xfe34},{0xfe4d,0xfe4f},{0xff3f,0xff3f}
     };
 
     // Punctuation, dash (42)
     static const std::vector<std::pair<uint32_t, uint32_t>> Pd = {
             {0x2d,0x2d},{0x58a,0x58a},{0x5be,0x5be},{0x1400,0x1400},{0x1806,0x1806},{0x2010,0x2015},{0x2e17,0x2e17},
             {0x2e1a,0x2e1a},{0x2e3a,0x2e3b},{0x2e40,0x2e40},{0x2e5d,0x2e5d},{0x301c,0x301c},{0x3030,0x3030},
-            {0x30a0,0x30a0},{0xfe31,0xfe32},{0xfe58,0xfe58},{0xfe63,0xfe63},{0xff0d,0xff0d},{0xff0d,0xff0d}
+            {0x30a0,0x30a0},{0xfe31,0xfe32},{0xfe58,0xfe58},{0xfe63,0xfe63},{0xff0d,0xff0d},{0x10ead,0x10ead}
     };
 
     // Punctuation, open (43)
@@ -521,7 +522,7 @@ namespace UNICODE_RANGES {
             {0x3014,0x3014},{0x3016,0x3016},{0x3018,0x3018},{0x301a,0x301a},{0x301d,0x301d},{0xfd3f,0xfd3f},
             {0xfe17,0xfe17},{0xfe35,0xfe35},{0xfe37,0xfe37},{0xfe39,0xfe39},{0xfe3b,0xfe3b},{0xfe3d,0xfe3d},
             {0xfe3f,0xfe3f},{0xfe41,0xfe41},{0xfe43,0xfe43},{0xfe47,0xfe47},{0xfe59,0xfe59},{0xfe5b,0xfe5b},
-            {0xfe5d,0xfe5d},{0xff08,0xff08},{0xff3b,0xff3b},{0xff5b,0xff5b},{0xff5f,0xff5f},{0xff5f,0xff5f}
+            {0xfe5d,0xfe5d},{0xff08,0xff08},{0xff3b,0xff3b},{0xff5b,0xff5b},{0xff5f,0xff5f},{0xff62,0xff62}
     };
 
     // Punctuation, close (44)
@@ -538,19 +539,19 @@ namespace UNICODE_RANGES {
             {0x301b,0x301b},{0x301e,0x301f},{0xfd3e,0xfd3e},{0xfe18,0xfe18},{0xfe36,0xfe36},{0xfe38,0xfe38},
             {0xfe3a,0xfe3a},{0xfe3c,0xfe3c},{0xfe3e,0xfe3e},{0xfe40,0xfe40},{0xfe42,0xfe42},{0xfe44,0xfe44},
             {0xfe48,0xfe48},{0xfe5a,0xfe5a},{0xfe5c,0xfe5c},{0xfe5e,0xfe5e},{0xff09,0xff09},{0xff3d,0xff3d},
-            {0xff5d,0xff5d},{0xff60,0xff60},{0xff60,0xff60}
+            {0xff5d,0xff5d},{0xff60,0xff60},{0xff63,0xff63}
     };
 
     // Punctuation, initial quote (45)
     static const std::vector<std::pair<uint32_t, uint32_t>> Pi = {
             {0xab,0xab},{0x2018,0x2018},{0x201b,0x201c},{0x201f,0x201f},{0x2039,0x2039},{0x2e02,0x2e02},{0x2e04,0x2e04},
-            {0x2e09,0x2e09},{0x2e0c,0x2e0c},{0x2e1c,0x2e1c},{0x2e1c,0x2e1c}
+            {0x2e09,0x2e09},{0x2e0c,0x2e0c},{0x2e1c,0x2e1c},{0x2e20,0x2e20}
     };
 
     // Punctuation, final quote (46)
     static const std::vector<std::pair<uint32_t, uint32_t>> Pf = {
             {0xbb,0xbb},{0x2019,0x2019},{0x201d,0x201d},{0x203a,0x203a},{0x2e03,0x2e03},{0x2e05,0x2e05},{0x2e0a,0x2e0a},
-            {0x2e0d,0x2e0d},{0x2e1d,0x2e1d},{0x2e1d,0x2e1d}
+            {0x2e0d,0x2e0d},{0x2e1d,0x2e1d},{0x2e21,0x2e21}
     };
 
     // Punctuation, other (47)
@@ -585,7 +586,7 @@ namespace UNICODE_RANGES {
             {0x1173c,0x1173e},{0x1183b,0x1183b},{0x11944,0x11946},{0x119e2,0x119e2},{0x11a3f,0x11a46},{0x11a9a,0x11a9c},
             {0x11a9e,0x11aa2},{0x11c41,0x11c45},{0x11c70,0x11c71},{0x11ef7,0x11ef8},{0x11fff,0x11fff},{0x12470,0x12474},
             {0x12ff1,0x12ff2},{0x16a6e,0x16a6f},{0x16af5,0x16af5},{0x16b37,0x16b3b},{0x16b44,0x16b44},{0x16e97,0x16e9a},
-            {0x16fe2,0x16fe2},{0x1bc9f,0x1bc9f},{0x1da87,0x1da8b},{0x1da87,0x1da8b}
+            {0x16fe2,0x16fe2},{0x1bc9f,0x1bc9f},{0x1da87,0x1da8b},{0x1e95e,0x1e95f}
     };
 }
 
@@ -602,7 +603,7 @@ namespace UNICODE_RANGES {
             {0x2b47,0x2b4c},{0xfb29,0xfb29},{0xfe62,0xfe62},{0xfe64,0xfe66},{0xff0b,0xff0b},{0xff1c,0xff1e},
             {0xff5c,0xff5c},{0xff5e,0xff5e},{0xffe2,0xffe2},{0xffe9,0xffec},{0x1d6c1,0x1d6c1},{0x1d6db,0x1d6db},
             {0x1d6fb,0x1d6fb},{0x1d715,0x1d715},{0x1d735,0x1d735},{0x1d74f,0x1d74f},{0x1d76f,0x1d76f},{0x1d789,0x1d789},
-            {0x1d7a9,0x1d7a9},{0x1d7c3,0x1d7c3},{0x1d7c3,0x1d7c3}
+            {0x1d7a9,0x1d7a9},{0x1d7c3,0x1d7c3},{0x1eef0,0x1eef1}
     };
 
     // Symbol, currency (52)
@@ -610,7 +611,7 @@ namespace UNICODE_RANGES {
             {0x24,0x24},{0xa2,0xa5},{0x58f,0x58f},{0x60b,0x60b},{0x7fe,0x7ff},{0x9f2,0x9f3},{0x9fb,0x9fb},
             {0xaf1,0xaf1},{0xbf9,0xbf9},{0xe3f,0xe3f},{0x17db,0x17db},{0x20a0,0x20c0},{0xa838,0xa838},
             {0xfdfc,0xfdfc},{0xfe69,0xfe69},{0xff04,0xff04},{0xffe0,0xffe1},{0xffe5,0xffe6},{0x11fdd,0x11fe0},
-            {0x1e2ff,0x1e2ff},{0x1e2ff,0x1e2ff}
+            {0x1e2ff,0x1e2ff},{0x1ecb0,0x1ecb0}
     };
 
     // Symbol, modifier (53)
@@ -619,7 +620,7 @@ namespace UNICODE_RANGES {
             {0x2d2,0x2df},{0x2e5,0x2eb},{0x2ed,0x2ed},{0x2ef,0x2ff},{0x375,0x375},{0x384,0x385},
             {0x888,0x888},{0x1fbd,0x1fbd},{0x1fbf,0x1fc1},{0x1fcd,0x1fcf},{0x1fdd,0x1fdf},{0x1fed,0x1fef},
             {0x1ffd,0x1ffe},{0x309b,0x309c},{0xa700,0xa716},{0xa720,0xa721},{0xa789,0xa78a},{0xab5b,0xab5b},
-            {0xab6a,0xab6b},{0xfbb2,0xfbc2},{0xff3e,0xff3e},{0xff40,0xff40},{0xffe3,0xffe3},{0xffe3,0xffe3}
+            {0xab6a,0xab6b},{0xfbb2,0xfbc2},{0xff3e,0xff3e},{0xff40,0xff40},{0xffe3,0xffe3},{0x1f3fb,0x1f3ff}
     };
 
     // Symbol, other (54)
@@ -654,14 +655,14 @@ namespace UNICODE_RANGES {
             {0x1f700,0x1f773},{0x1f780,0x1f7d8},{0x1f7e0,0x1f7eb},{0x1f7f0,0x1f7f0},{0x1f800,0x1f80b},{0x1f810,0x1f847},
             {0x1f850,0x1f859},{0x1f860,0x1f887},{0x1f890,0x1f8ad},{0x1f8b0,0x1f8b1},{0x1f900,0x1fa53},{0x1fa60,0x1fa6d},
             {0x1fa70,0x1fa74},{0x1fa78,0x1fa7c},{0x1fa80,0x1fa86},{0x1fa90,0x1faac},{0x1fab0,0x1faba},{0x1fac0,0x1fac5},
-            {0x1fad0,0x1fad9},{0x1fae0,0x1fae7},{0x1faf0,0x1faf6},{0x1fb00,0x1fb92},{0x1fb00,0x1fb92}
+            {0x1fad0,0x1fad9},{0x1fae0,0x1fae7},{0x1faf0,0x1faf6},{0x1fb00,0x1fb92},{0x1fb94,0x1fbca}
     };
 }
 
     namespace Separator {
     // Separator, space (61)
     static const std::vector<std::pair<uint32_t, uint32_t>> Zs = {
-            {0x20,0x20},{0xa0,0xa0},{0x1680,0x1680},{0x2000,0x200a},{0x202f,0x202f},{0x205f,0x205f},{0x205f,0x205f}
+            {0x20,0x20},{0xa0,0xa0},{0x1680,0x1680},{0x2000,0x200a},{0x202f,0x202f},{0x205f,0x205f},{0x3000,0x3000}
     };
 
     // Separator, line (62)
@@ -678,7 +679,7 @@ namespace UNICODE_RANGES {
     namespace Other {
     // Other, control (71)
     static const std::vector<std::pair<uint32_t, uint32_t>> Cc = {
-            {0x0,0x1f},{0x0,0x1f}
+            {0x0,0x1f},{0x7f,0x9f}
     };
 
     // Other, format (72)
@@ -686,7 +687,7 @@ namespace UNICODE_RANGES {
             {0xad,0xad},{0x600,0x605},{0x61c,0x61c},{0x6dd,0x6dd},{0x70f,0x70f},{0x890,0x891},{0x8e2,0x8e2},
             {0x180e,0x180e},{0x200b,0x200f},{0x202a,0x202e},{0x2060,0x2064},{0x2066,0x206f},{0xfeff,0xfeff},
             {0xfff9,0xfffb},{0x110bd,0x110bd},{0x110cd,0x110cd},{0x13430,0x13438},{0x1bca0,0x1bca3},{0x1d173,0x1d17a},
-            {0xe0001,0xe0001},{0xe0001,0xe0001}
+            {0xe0001,0xe0001},{0xe0020,0xe007f}
     };
 
     // Other, surrogate (73)
@@ -696,7 +697,7 @@ namespace UNICODE_RANGES {
 
     // Other, private use (74)
     static const std::vector<std::pair<uint32_t, uint32_t>> Co = {
-            {0xe000,0xf8ff},{0xf0000,0xffffd},{0xf0000,0xffffd}
+            {0xe000,0xf8ff},{0xf0000,0xffffd},{0x100000,0x10fffd}
     };
 
     // Other, not assigned (75)
@@ -817,53 +818,131 @@ namespace UNICODE_RANGES {
             {0x1fac6,0x1facf},{0x1fada,0x1fadf},{0x1fae8,0x1faef},{0x1faf7,0x1faff},{0x1fb93,0x1fb93},{0x1fbcb,0x1fbef},
             {0x1fbfa,0x1ffff},{0x2a6e0,0x2a6ff},{0x2b739,0x2b73f},{0x2b81e,0x2b81f},{0x2cea2,0x2ceaf},{0x2ebe1,0x2f7ff},
             {0x2fa1e,0x2ffff},{0x3134b,0xe0000},{0xe0002,0xe001f},{0xe0080,0xe00ff},{0xe01f0,0xeffff},{0xffffe,0xfffff},
-            {0xffffe,0xfffff}
+            {0x10fffe,0x10ffff}
     };
 }
 }
 
+namespace REGEX_RANGES {
+    // \s whitespace (81)
+    static const std::vector<std::pair<uint32_t, uint32_t>> Whitespace = {
+            {0x9,0xd},{0x20,0x20},{0x85,0x85},{0xa0,0xa0},{0x1680,0x1680},{0x2000,0x200a},{0x2028,0x2029},
+            {0x202f,0x202f},{0x205f,0x205f},{0x3000,0x3000}
+    };
+}
+
 class UNICODE {
 public:
-    uint32_t category(uint32_t & codepoint) {
-        if (codepoint >= 97 && codepoint <= 122) {
-            return 12;
+    std::vector<uint32_t> to_codepoints(const std::string & str) {
+        std::vector<uint32_t> result;
+        result.reserve(str.size());
+        size_t offset = 0;
+        while (offset < str.size()) {
+            result.push_back(utf8_to_codepoint(str, offset));
         }
-
-        auto it = codepoint_to_category_code.find(codepoint);
-        if (it != codepoint_to_category_code.end()) {
-            return it->second;
-        } else if (codepoint < 1114112){
-            return binary_search_implement(codepoint, codepoint_ranges_low_frequency);
-        } else {
-            return UNICODE_INVALID;
-        }
+        return result;
     }
 
-    bool is_category(uint32_t & codepoint, uint32_t & UNICODE_TYPE) {
-        uint32_t difference = category(codepoint) - UNICODE_TYPE;
-        if (UNICODE_TYPE % 10 == 0) {
-            return (difference > 0) && (difference < 10);
-        } else {
-            return difference == 0;
+    std::vector<std::vector<uint32_t>> to_codepoints(const std::vector<std::string> & str) {
+        std::vector<std::vector<uint32_t>> result;
+        result.reserve(str.size());
+        for (auto & i : str) {
+            result.push_back(to_codepoints(i));
         }
+        return result;
     }
 
-    bool is_category(uint32_t & codepoint, const std::string & UNICODE_TYPE) {
+    std::string to_string(const std::vector<uint32_t> & codepoints) {
+        std::string result;
+        result.reserve(codepoints.size()*4);
+        for (auto & i : codepoints) {
+            result += codepoint_to_utf8(i);
+        }
+        return result;
+    }
+
+    bool is_category(const uint32_t & codepoint, const std::string & UNICODE_TYPE) {
         auto it = category_name_to_category_code.find(UNICODE_TYPE);
         if (it != category_name_to_category_code.end()) {
-            return is_category(codepoint, it->second);
+            return is_category_implement(codepoint, it->second);
         } else {
             throw std::runtime_error("Invalid UNICODE_TYPE");
         }
     }
 
-    std::string to_category_name(uint32_t & UNICODE_TYPE) {
+    bool is_category(const uint32_t & codepoint, const std::vector<std::string> & UNICODE_TYPES) {
+        std::vector<uint32_t> category_codes;
+        category_codes.reserve(UNICODE_TYPES.size());
+
+        for (auto & UNICODE_TYPE : UNICODE_TYPES) {
+            auto it = category_name_to_category_code.find(UNICODE_TYPE);
+            if (it != category_name_to_category_code.end()) {
+                category_codes.push_back(it->second);
+            } else {
+                throw std::runtime_error("Invalid UNICODE_TYPE");
+            }
+        }
+
+        return is_category_implement_batched(codepoint, category_codes);
+    }
+
+    bool is_category(const uint32_t & codepoint, const std::vector<uint32_t> & UNICODE_TYPES) {
+        return is_category_implement_batched(codepoint, UNICODE_TYPES);
+    }
+
+    std::string to_category_name(const uint32_t & UNICODE_TYPE) {
         auto it = category_code_to_category_name.find(UNICODE_TYPE);
         if (it != category_code_to_category_name.end()) {
             return it->second;
         } else {
             throw std::runtime_error("Invalid UNICODE_TYPE");
         }
+    }
+
+    std::vector<std::string> to_category_code(const std::vector<uint32_t> & UNICODE_TYPES) {
+        std::vector<std::string> result;
+        result.reserve(UNICODE_TYPES.size());
+        for (auto & UNICODE_TYPE : UNICODE_TYPES) {
+            result.push_back(to_category_name(UNICODE_TYPE));
+        }
+        return result;
+    }
+
+    uint32_t to_category_code(const std::string & UNICODE_TYPE) {
+        auto it = category_name_to_category_code.find(UNICODE_TYPE);
+        if (it != category_name_to_category_code.end()) {
+            return it->second;
+        } else {
+            throw std::runtime_error("Invalid UNICODE_TYPE");
+        }
+    }
+
+    std::vector<uint32_t> to_category_code(const std::vector<std::string> & UNICODE_TYPES) {
+        std::vector<uint32_t> result;
+        result.reserve(UNICODE_TYPES.size());
+        for (auto & UNICODE_TYPE : UNICODE_TYPES) {
+            result.push_back(to_category_code(UNICODE_TYPE));
+        }
+        return result;
+    }
+
+    uint32_t get_category(const uint32_t & codepoint) {
+        return category_implement(codepoint);
+    }
+
+    bool overload_category(const std::vector<std::pair<uint32_t, uint32_t>> & range, const std::string & UNICODE_TYPE) {
+        auto it = category_name_to_category_code.find(UNICODE_TYPE);
+        if (it != category_name_to_category_code.end()) {
+            for (const auto & i : range) {
+                for (uint32_t index = i.first; index <= i.second; index++) {
+                    codepoint_to_category_code[index] = it->second;
+                }
+            }
+        } else {
+            throw std::runtime_error("Invalid UNICODE_TYPE");
+        }
+        category_overloaded = true;
+        return true;
     }
     
     UNICODE () {
@@ -876,18 +955,144 @@ private:
     std::unordered_map<uint32_t, uint32_t> codepoint_to_category_code;
     std::vector<std::pair<uint32_t, uint32_t>> codepoint_ranges_low_frequency;
     std::map<std::pair<uint32_t, uint32_t>, uint32_t> codepoint_ranges_to_category_code;
+    bool category_overloaded = false;
+
+    static size_t binary_search_implement(const uint32_t & codepoint, const std::vector<std::pair<uint32_t, uint32_t>> & ranges) {
+        size_t left = 0;
+        size_t right = ranges.size() - 1;
+
+        while (left <= right && right < ranges.size()) {
+            size_t mid = left + (right - left) / 2;
+            const auto& range = ranges[mid];
+
+            if (codepoint >= range.first && codepoint <= range.second) {
+                // Target is within the range of the current pair.
+                return mid;
+            } else if (codepoint < range.first) {
+                // Target is less than the start of the range, search in the left half.
+                right = mid - 1;
+            } else {
+                // Target is greater than the end of the range, search in the right half.
+                left = mid + 1;
+            }
+        }
+        throw std::runtime_error("Target out of range!");
+    }
+
+    static uint32_t utf8_to_codepoint(const std::string & utf8, size_t & offset) {
+        const auto byte1 = utf8[offset];
+
+        if (!(byte1 & 0x80)) { // 1-byte sequence
+            return utf8[offset++];
+        }
+        if ((byte1 & 0xC0) != 0xC0) { // Checks for 10xx xxxx which is invalid at start
+            throw std::invalid_argument("invalid character");
+        }
+
+        // Pre-compute size based on the first byte
+        const size_t size =
+                !(byte1 & 0x20) ? 2 :
+                !(byte1 & 0x10) ? 3 :
+                !(byte1 & 0x08) ? 4 : 0;
+
+        if (size == 0 || (offset + size > utf8.size())) { // Check for invalid size or string length
+            throw std::invalid_argument("invalid character");
+        }
+
+        uint32_t result = byte1 & (0xFF >> (size + 1)); // Initialize result with bits from the first byte
+
+        for (size_t i = 1; i < size; ++i) {
+            const auto byte = utf8[offset + i];
+            if ((byte & 0xC0) != 0x80) { // Following bytes must match 10xx xxxx
+                throw std::invalid_argument("invalid character");
+            }
+            result = (result << 6) | (byte & 0x3F);
+        }
+
+        offset += size;
+        return result;
+    }
+
+
+    static std::string codepoint_to_utf8(uint32_t codepoint) {
+        std::string result;
+        result.reserve(4);
+        if (/* 0x00 <= cp && */ codepoint <= 0x7f) {
+            result.push_back(codepoint);
+        }
+        else if (0x80 <= codepoint && codepoint <= 0x7ff) {
+            result.push_back(0xc0 | ((codepoint >> 6) & 0x1f));
+            result.push_back(0x80 | (codepoint & 0x3f));
+        }
+        else if (0x800 <= codepoint && codepoint <= 0xffff) {
+            result.push_back(0xe0 | ((codepoint >> 12) & 0x0f));
+            result.push_back(0x80 | ((codepoint >> 6) & 0x3f));
+            result.push_back(0x80 | (codepoint & 0x3f));
+        }
+        else if (0x10000 <= codepoint && codepoint <= 0x10ffff) {
+            result.push_back(0xf0 | ((codepoint >> 18) & 0x07));
+            result.push_back(0x80 | ((codepoint >> 12) & 0x3f));
+            result.push_back(0x80 | ((codepoint >> 6) & 0x3f));
+            result.push_back(0x80 | (codepoint & 0x3f));
+        }
+        else {
+            throw std::invalid_argument("invalid codepoint");
+        }
+        return result;
+    }
+
+    uint32_t category_implement(const uint32_t & codepoint) {
+        if (!category_overloaded && codepoint >= 97 && codepoint <= 122) {
+            return 12;
+        }
+
+        auto it = codepoint_to_category_code.find(codepoint);
+        if (it != codepoint_to_category_code.end()) {
+            return it->second;
+        } else if (codepoint < 0x110000){
+            auto index = binary_search_implement(codepoint, codepoint_ranges_low_frequency);
+            return codepoint_ranges_to_category_code.at(codepoint_ranges_low_frequency[index]);
+        } else {
+            return UNICODE_INVALID;
+        }
+    }
+
+    bool is_category_implement(const uint32_t & codepoint, const uint32_t & UNICODE_TYPE) {
+        uint32_t difference = category_implement(codepoint) - UNICODE_TYPE;
+        if (UNICODE_TYPE % 10 == 0) {
+            return (difference > 0) && (difference < 10);
+        } else {
+            return difference == 0;
+        }
+    }
+
+    // If the codepoint satisfies at least one of the categories, then return true
+    bool is_category_implement_batched(const uint32_t & codepoint, const std::vector<uint32_t> & UNICODE_TYPES) {
+        uint32_t codepoint_category = category_implement(codepoint);
+        for (auto & UNICODE_TYPE : UNICODE_TYPES) {
+            auto difference = codepoint_category - UNICODE_TYPE;
+            if (UNICODE_TYPE % 10 == 0 && difference > 0 && difference < 10) {
+                return true;
+            }
+            else if (difference == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     bool initialize() {
         category_name_to_category_code = {{"LETTER",10}, {"MARK", 20}, {"NUMBER", 30},
-                              {"PUNCTUATION", 40}, {"SYMBOL", 50}, {"SEPARATOR", 60},
-                              {"OTHER", 70}, {"Lu", 11}, {"Ll", 12}, {"Lt", 13},
-                              {"Lm", 14}, {"Lo", 15}, {"Mn", 21}, {"Mc", 22},
-                              {"Me", 23}, {"Nd", 31}, {"Nl", 32}, {"No", 33},
-                              {"Pc", 41}, {"Pd", 42}, {"Ps", 43}, {"Pe", 44},
-                              {"Pi", 45}, {"Pf", 46}, {"Po", 47}, {"Sm", 51},
-                              {"Sc", 52}, {"Sk", 53}, {"So", 54}, {"Zs", 61},
-                              {"Zl", 62}, {"Zp", 63}, {"Cc", 71}, {"Cf", 72},
-                              {"Cs", 73}, {"Co", 74}, {"Cn",75}};
+                                          {"PUNCTUATION", 40}, {"SYMBOL", 50}, {"SEPARATOR", 60},
+                                          {"OTHER", 70}, {"WHITESPACE", 81}, {"Lu", 11},
+                                          {"Ll", 12}, {"Lt", 13}, {"Lm", 14}, {"Lo", 15},
+                                          {"Mn", 21}, {"Mc", 22}, {"Me", 23}, {"Nd", 31},
+                                          {"Nl", 32}, {"No", 33}, {"Pc", 41}, {"Pd", 42},
+                                          {"Ps", 43}, {"Pe", 44}, {"Pi", 45}, {"Pf", 46},
+                                          {"Po", 47}, {"Sm", 51}, {"Sc", 52}, {"Sk", 53},
+                                          {"So", 54}, {"Zs", 61}, {"Zl", 62}, {"Zp", 63},
+                                          {"Cc", 71}, {"Cf", 72}, {"Cs", 73}, {"Co", 74},
+                                          {"Cn",75}};
         for (const auto & i : category_name_to_category_code) {
             category_code_to_category_name[i.second] = i.first;
         }
@@ -1043,27 +1248,5 @@ private:
         }
         std::sort(codepoint_ranges_low_frequency.begin(), codepoint_ranges_low_frequency.end());
         return true;
-    }
-
-    static size_t binary_search_implement(uint32_t & codepoint, const std::vector<std::pair<uint32_t, uint32_t>> & ranges) {
-        size_t left = 0;
-        size_t right = ranges.size() - 1;
-
-        while (left <= right) {
-            size_t mid = left + (right - left) / 2;
-            const auto& range = ranges[mid];
-
-            if (codepoint >= range.first && codepoint <= range.second) {
-                // Target is within the range of the current pair.
-                return mid;
-            } else if (codepoint < range.first) {
-                // Target is less than the start of the range, search in the left half.
-                right = mid - 1;
-            } else {
-                // Target is greater than the end of the range, search in the right half.
-                left = mid + 1;
-            }
-        }
-        throw std::runtime_error("Target out of range!");
     }
 };
